@@ -1,0 +1,1 @@
+cmd_/home/devika/cs252projectws/cs252project1chapter2/simple.mod := { echo  /home/devika/cs252projectws/cs252project1chapter2/simple.o;  echo; } > /home/devika/cs252projectws/cs252project1chapter2/simple.mod

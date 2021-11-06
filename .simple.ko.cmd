@@ -1,0 +1,1 @@
+cmd_/home/devika/cs252projectws/cs252project1chapter2/simple.ko := ld -r -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/devika/cs252projectws/cs252project1chapter2/simple.ko /home/devika/cs252projectws/cs252project1chapter2/simple.o /home/devika/cs252projectws/cs252project1chapter2/simple.mod.o;  true
