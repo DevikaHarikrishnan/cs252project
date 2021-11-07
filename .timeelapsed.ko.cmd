@@ -1,0 +1,1 @@
+cmd_/home/devika/cs252projectws/cs252project1chapter2/timeelapsed.ko := ld -r -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/devika/cs252projectws/cs252project1chapter2/timeelapsed.ko /home/devika/cs252projectws/cs252project1chapter2/timeelapsed.o /home/devika/cs252projectws/cs252project1chapter2/timeelapsed.mod.o;  true
