@@ -1,7 +1,7 @@
 /**
  * @file simple.c
  * @author Devika Harikrishnan
- * @brief 
+ * @brief Create Kernel module and load into Linux Kernel for interacting with the kernel and invoke kernel functions
  * courtesy  : Operating System Concepts
  * @version 0.1
  * @date 2021-11-06
@@ -35,7 +35,7 @@ static void simple_exit(void) {
 	unsigned long int first_num = 3300; 
     unsigned int second_num = 24;
     num_interrupts_modremove =jiffies;
-    time_elapsed = (num_interrupts_modremove - num_interrupts_modload)/1000;
+    time_elapsed = (num_interrupts_modremove - num_interrupts_modload)*4/1000;/*HZ is 250 that means timer interrupt happens every 4 milliseconds*/
     /*print the gcd of 3300 and 24 using gcd function in linux/gcd.h*/
     printk(KERN_INFO "The greatest common denominator of %lu and %u is %lu\n",first_num,second_num,gcd(first_num,second_num));
     printk(KERN_INFO "The value of global variable jiffies which maintains the number of timer interrupts since system boot is %lu\n",num_interrupts_modremove);/*print value of jiffies*/

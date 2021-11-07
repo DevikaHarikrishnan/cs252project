@@ -1,0 +1,1 @@
+cmd_/home/devika/cs252projectws/cs252project1chapter2/readjiffies.mod := { echo  /home/devika/cs252projectws/cs252project1chapter2/readjiffies.o;  echo; } > /home/devika/cs252projectws/cs252project1chapter2/readjiffies.mod
