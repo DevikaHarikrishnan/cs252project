@@ -1,0 +1,1 @@
+cmd_/home/devika/cs252projectws/cs252project1chapter2/hello.mod := { echo  /home/devika/cs252projectws/cs252project1chapter2/hello.o;  echo; } > /home/devika/cs252projectws/cs252project1chapter2/hello.mod

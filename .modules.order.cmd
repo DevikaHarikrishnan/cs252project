@@ -1,1 +1,1 @@
-cmd_/home/devika/cs252projectws/cs252project1chapter2/modules.order := {   echo /home/devika/cs252projectws/cs252project1chapter2/simple.ko; :; } | awk '!x[$$0]++' - > /home/devika/cs252projectws/cs252project1chapter2/modules.order
+cmd_/home/devika/cs252projectws/cs252project1chapter2/modules.order := {   echo /home/devika/cs252projectws/cs252project1chapter2/simple.ko;   echo /home/devika/cs252projectws/cs252project1chapter2/hello.ko; :; } | awk '!x[$$0]++' - > /home/devika/cs252projectws/cs252project1chapter2/modules.order
