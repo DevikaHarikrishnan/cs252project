@@ -18,12 +18,12 @@
 
 #define BUFFER_SIZE 128
 
-#define PROC_NAME "seconds"
-#define MODULE_NAME "Procfs Example"
+#define PROC_NAME "seconds" /*define process name*/
+#define MODULE_NAME "Procfs Example"/*define module name*/
 unsigned long num_interrupts_modload ,num_interrupts_modremove,time_elapsed;
 
 /**
- * This function is called each time the /proc/hello is read.
+ * This function is called each time the /proc/seconds is read.
  * 
  * This function is called repeatedly until it returns 0, so
  * there must be logic that ensures it ultimately returns 0
@@ -42,7 +42,7 @@ static ssize_t my_proc_read(struct file *file, char __user *usr_buf, size_t coun
         int rv = 0;
         char buffer[BUFFER_SIZE];
         static int completed = 0;
-        int tick_rate = 1000/HZ;
+        int tick_rate = 1000/HZ;/* tick_rate in seconds*/
         num_interrupts_modremove = jiffies;
 
         if (completed) {
@@ -51,7 +51,7 @@ static ssize_t my_proc_read(struct file *file, char __user *usr_buf, size_t coun
         }
 
         completed = 1;
-        time_elapsed = (num_interrupts_modremove - num_interrupts_modload)*tick_rate/1000;
+        time_elapsed = (num_interrupts_modremove - num_interrupts_modload)*tick_rate/1000; /* time elapsed = difference in number of interrupts since module was loaded times frequency of interrupt/1000*/
 
         rv = sprintf( buffer, "Time elapsed in seconds is = %lu\n", time_elapsed );
 

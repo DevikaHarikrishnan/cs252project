@@ -1,3 +1,4 @@
+CONFIG_MODULE_SIG=n
 obj-m += simple.o
 obj-m += hello.o
 obj-m += readjiffies.o
