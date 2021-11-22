@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Nov 12 22:15:32 2021
+# Make data base, printed on Tue Nov 23 00:04:37 2021
 
 # Variables
 
@@ -47,7 +47,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-gb","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:36035
+JOURNAL_STREAM = 8:35315
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -67,7 +67,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1365
+MANAGERPID = 1671
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -75,11 +75,11 @@ VSCODE_CWD = /home/devika
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/devika/.local/bin:/home/devika/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/devika-VirtualBox:@/tmp/.ICE-unix/1590,unix/devika-VirtualBox:/tmp/.ICE-unix/1590
+SESSION_MANAGER = local/devika-VirtualBox:@/tmp/.ICE-unix/1910,unix/devika-VirtualBox:/tmp/.ICE-unix/1910
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -89,7 +89,7 @@ VSCODE_LOG_STACK = false
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=f845bfda-540a-464e-b4a2-115fd721c96f&iid=f845bfda-540a-464e-b4a2-115fd721c96f&sid=f845bfda-540a-464e-b4a2-115fd721c96f","uploadToServer":true}
 # environment
-INVOCATION_ID = 2c4134516b2546a59ce45240f926b197
+INVOCATION_ID = 450b5a137197408fa97258ad2dc4d492
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -99,7 +99,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 9365
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2244
 # automatic
 %F = $(notdir $%)
 # environment
@@ -111,7 +111,7 @@ PWD = /home/devika/cs252projectws/cs252project1chapter2
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1540
+SSH_AGENT_PID = 1848
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -149,7 +149,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d936267d-1bd4-48f6-a23d-f86038896e6a.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-de185917-9c76-446a-8fc6-5fee138fce55.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -213,7 +213,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 9365
+VSCODE_PID = 2244
 # variable set hash-table stats:
 # Load=102/1024=10%, Rehash=0, Collisions=14/141=10%
 
@@ -223,9 +223,9 @@ VSCODE_PID = 9365
 
 # Directories
 
-# . (device 2053, inode 661287): 58 files, no impossibilities.
+# . (device 2053, inode 661287): 59 files, no impossibilities.
 
-# 58 files, no impossibilities in 1 directories.
+# 59 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -278,11 +278,11 @@ Makefile:
 
 # Not a target:
 .DEFAULT:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -298,12 +298,12 @@ clean:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 64 / storage = 890 B / avg = 13 B
-# current buf: size = 8162 B / used = 890 B / count = 64 / avg = 13 B
+# strcache buffers: 1 (0) / strings = 65 / storage = 897 B / avg = 13 B
+# current buf: size = 8162 B / used = 897 B / count = 65 / avg = 13 B
 
-# strcache performance: lookups = 72 / hit rate = 11%
+# strcache performance: lookups = 73 / hit rate = 10%
 # hash-table stats:
-# Load=64/8192=1%, Rehash=0, Collisions=5/72=7%
-# Finished Make data base on Fri Nov 12 22:15:32 2021
+# Load=65/8192=1%, Rehash=0, Collisions=5/73=7%
+# Finished Make data base on Tue Nov 23 00:04:37 2021
 
  

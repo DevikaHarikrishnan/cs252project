@@ -14,9 +14,9 @@
 #include <linux/kernel.h>/*Header file needed for KERN_ALERT and KERN_INFO*/
 #include <linux/hash.h> /*Header file containing hashing functions for use within the kernel*/
 #include <linux/gcd.h>/* Header file containing function to find greatest common denominator */
-#include <asm/param.h>/* Header file defining tick rate, HZ*/
+#include <asm/param.h>/* Header file defining tick rate, frequency of timer interrupt HZ*/
 #include <linux/jiffies.h>/*Header file declaring global variable jiffies, which maintains the number of timer interrupts since system boot*/
-unsigned long num_interrupts_modload ,num_interrupts_modremove,time_elapsed;
+unsigned long num_interrupts_modload ,num_interrupts_modremove,time_elapsed;/*declaring variables*/
 
 /* This function is called when the module is loaded. */
 static int simple_init(void)
@@ -26,7 +26,7 @@ static int simple_init(void)
        printk(KERN_INFO "The value of golden ratio prime is %llu\n", GOLDEN_RATIO_PRIME);/*print golden ratio prime defined in hash.h*/
        printk(KERN_INFO "The value of global variable jiffies which maintains the number of timer interrupts since system boot is %lu\n",num_interrupts_modload);/*print value of jiffies*/
        printk(KERN_INFO "The value of tick rate(frequency of timer interrupt) as defined in asm/param.h is %d\n",HZ);/*Print the rate at which the timer ticks */
-       return 0;
+       return 0;/*returns success if 0*/
 }
 
 /* This function is called when the module is removed. */
