@@ -36,3 +36,16 @@ The requirements involved in this part are as follows
 This is coded in **readjiffies.c**
 2.Design a kernel module that creates a proc file named /proc/seconds that reports the number of elapsed seconds since the kernel module was loaded. This will involve using the value of jiffies as well as the HZ rate. When a user enters the command cat /proc/seconds your kernel module will report the number of seconds that have elapsed since the kernel module was first loaded. Be sure to remove /proc/seconds when the module is removed.
 This is coded in **timeelapsed.c**
+
+## Output to simple.c
+![image](https://user-images.githubusercontent.com/65976375/142978999-3f25c498-89f7-486d-8cf2-c761d1280617.png)
+![image](https://user-images.githubusercontent.com/65976375/142979053-532d16b4-815f-4ee9-acf1-3db977d51add.png)
+
+## Output to readjiffies.c
+![image](https://user-images.githubusercontent.com/65976375/142979271-9c361701-5b9f-429d-9b00-0d12d105f120.png)
+![image](https://user-images.githubusercontent.com/65976375/142979324-6d3b4103-d49b-4ee3-8e93-10740d0d5cc8.png)
+
+## Output to timeelapsed.c
+
+https://user-images.githubusercontent.com/65976375/142979519-2ca7505a-fb64-4846-9857-f1ba5726bbc4.mp4
+
