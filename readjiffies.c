@@ -16,14 +16,14 @@
 #include <linux/jiffies.h>//*Header file declaring global variable jiffies, which maintains the number of timer interrupts since system boot*/
 #include <asm/param.h>/* Header file defining tick rate, HZ*/
 
-#define BUFFER_SIZE 128
+#define BUFFER_SIZE 128/*define a buffer of 128 bytes so that OS sets aside 128 bytes to be used by this program*/
 
-#define PROC_NAME "jiffies"
+#define PROC_NAME "jiffies" /*define process name*/
 #define MODULE_NAME "Procfs Example"
 static char modname[] = "jiffies";
 
 /**
- * This function is called each time the /proc/hello is read.
+ * This function is called each time the /proc/jiffies is read.
  * 
  * This function is called repeatedly until it returns 0, so
  * there must be logic that ensures it ultimately returns 0
@@ -40,24 +40,25 @@ static char modname[] = "jiffies";
 static ssize_t my_proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t *pos)
 {
         int rv = 0;
-        char buffer[BUFFER_SIZE];
+        char buffer[BUFFER_SIZE];/*declare buffer of 128 bytes*/
         static int completed = 0;
 
-        if (completed) {
+        if (completed) {/*function is repeatedly called until it returns 0*/
                 completed = 0;
                 return 0;
         }
 
         completed = 1;
 
-        rv = sprintf( buffer, "Value of jiffies is = %lu\n", jiffies );
+        rv = sprintf( buffer, "Value of jiffies is = %lu\n", jiffies );/* Value of jiffies is written to variable buffer which is stored on kernel buffer*/
 
-        // copies the contents of buffer to userspace usr_buf
+
+        // copies the contents of kernel memory buffer to variable usr_buf which exists in user space as /proc/jiffies can be accessed from user space
         copy_to_user(usr_buf, buffer, rv);
 
         return rv;
 }
-static struct proc_ops my_proc_ops = {
+static struct proc_ops my_proc_ops = {/* process file operations*/
         
         .proc_read = my_proc_read,
 };
@@ -66,15 +67,10 @@ static struct proc_ops my_proc_ops = {
 /* This function is called when the module is loaded. */
 static int proc_init(void)
 {
-
-        // creates the /proc/hello entry
-        // the following function call is a wrapper for
-        // proc_create_data() passing NULL as the last argument
+        /*create the new /proc/jiffies entry using the proc_create function */
         proc_create(PROC_NAME, 0666, NULL, &my_proc_ops);
-
         printk(KERN_INFO "/proc/%s created\n", PROC_NAME);
-
-	    return 0;
+        return 0;
 }
 
 
@@ -82,7 +78,7 @@ static int proc_init(void)
 /* This function is called when the module is removed. */
 static void proc_exit(void) {
 
-        // removes the /proc/hello entry
+        // removes the /proc/jiffies entry
         remove_proc_entry(PROC_NAME, NULL);
 
         printk( KERN_INFO "/proc/%s removed\n", PROC_NAME);

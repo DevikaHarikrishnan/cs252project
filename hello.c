@@ -16,9 +16,9 @@
 #include <asm/uaccess.h>/* User space memory access -manipulation of user address space*/
 #include <linux/jiffies.h>//*Header file declaring global variable jiffies, which maintains the number of timer interrupts since system boot*/
 
-#define BUFFER_SIZE 128
+#define BUFFER_SIZE 128 /*define a buffer of 128 bytes so that OS sets aside 128 bytes to be used by this program*/
 
-#define PROC_NAME "hello"
+#define PROC_NAME "hello" /*define process name*/
 #define MESSAGE "Hello World\n"
 
 /**
@@ -43,24 +43,24 @@
 static ssize_t my_proc_read(struct file *file, char __user *usr_buf, size_t count, loff_t *pos)
 {
         int rv = 0;
-        char buffer[BUFFER_SIZE];
+        char buffer[BUFFER_SIZE];/*declare buffer of 128 bytes*/
         static int completed = 0;
 
-        if (completed) {
+        if (completed) { /*function is repeatedly called until it returns 0*/
                 completed = 0;
                 return 0;
         }
 
         completed = 1;
 
-        rv = sprintf(buffer, "Hello World\n");
+        rv = sprintf(buffer, "Hello World\n");/* Hello World is written to variable buffer which stored on kernel buffer*/
 
-        // copies the contents of buffer to userspace usr_buf
+        // copies the contents of kernel memory buffer to variable usr_buf which exists in user space as /proc/hello can be accessed from user space
         copy_to_user(usr_buf, buffer, rv);
 
         return rv;
 }
-static struct proc_ops my_proc_ops = {
+static struct proc_ops my_proc_ops = {/* file operations*/
         /*.owner = THIS_MODULE,*/
         .proc_read = my_proc_read,
 };
@@ -73,11 +73,11 @@ static int proc_init(void)
         // creates the /proc/hello entry
         // the following function call is a wrapper for
         // proc_create_data() passing NULL as the last argument
-        proc_create(PROC_NAME, 0666, NULL, &my_proc_ops);
+        proc_create(PROC_NAME, 0666, NULL, &my_proc_ops);/*create the new /proc/hello entry using the proc_create function */
 
         printk(KERN_INFO "/proc/%s created\n", PROC_NAME);
 
-	    return 0;
+	return 0;
 }
 
 /* This function is called when the module is removed. */
